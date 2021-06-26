@@ -19,6 +19,57 @@ function perimetro_circulo (radio) {
 function area_circulo (radio) {
     return Math.PI*radio*radio
 }
+function altura_triangulo_isoceles (lado1,lado2,lado3) {
+    if ((lado2===lado3 && lado2===lado1 && lado3===lado1) || (lado2!=lado3 && lado2!=lado1 && lado3!=lado1)) {
+        return "un triangulo isoceles tiene 2 lados iguales"
+    } else {
+        if (lado1 === lado2) {
+            var A= lado3/2;
+            var h= lado1;
+        } else if (lado1===lado3) {
+            var A = lado2/2;
+            var h = lado1
+        } else {
+            var A = lado1;
+            var h = lado2
+        }
+        const theta = Math.acos(A/h)
+        const altura = h*Math.sin(theta)
+        return altuwra
+    }
+}
+function area_triangulo_isoceles (lado1,lado2,lado3) {
+    if ((lado2===lado3 && lado2===lado1 && lado3===lado1) || (lado2!=lado3 && lado2!=lado1 && lado3!=lado1)) {
+        return "un triangulo isoceles tiene unicamente 2 lados iguales"
+    } else {    
+        if (lado1 === lado2) {
+            var A = lado3/2;
+            var h = lado1;
+        } else if (lado1===lado3) {
+            var A = lado2/2;
+            var h = lado1;
+        } else {
+            var A = lado1/2;
+            var h = lado2
+        }
+        const altura = altura_triangulo_isoceles(lado1,lado2,lado3)
+        return A*altura
+}
+}
+function Area_Triangulo_Isoceles () {
+    const lado1 = document.getElementById("ilado1").value
+    const lado2 = document.getElementById("ilado2").value
+    const lado3 = document.getElementById("ilado3").value
+    const area = area_triangulo_isoceles(lado1,lado2,lado3)
+    alert(area)
+}
+function Altura_Triangulo_Isoceles () {
+    const lado1 = document.getElementById("ilado1").value
+    const lado2 = document.getElementById("ilado2").value
+    const lado3 = document.getElementById("ilado3").value
+    const altura = altura_triangulo_isoceles(lado1,lado2,lado3)
+    alert(altura)
+}
 
 function Perimetro_Cuadrado () {
     const input = document.getElementById("inputCuadrado");
